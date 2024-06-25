@@ -1,0 +1,11 @@
+{
+    "idf.adapterTargetName": "esp32",
+    "files.associations": {
+        "stdio.h": "c",
+        "stdlib.h": "c",
+        "task.h": "c",
+        "font8x8_basic.h": "c",
+        "max30102.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}
