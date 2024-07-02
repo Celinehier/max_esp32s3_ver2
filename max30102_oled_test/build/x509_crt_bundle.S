@@ -1,4 +1,4 @@
-/* * Data converted from C:/Users/ASUS/Desktop/ESPIDF_Mana/max30102_oled_test/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from D:/HUST/20232/microprocessor_20232/max30102_oled_test/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 .section .rodata.embedded

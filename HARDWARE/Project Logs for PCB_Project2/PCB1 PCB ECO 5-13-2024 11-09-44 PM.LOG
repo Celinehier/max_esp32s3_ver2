@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=3.3_MCU Pin=OLED1-4
+Added Pin To Net: NetName=5V Pin=OLED1-4
+Added Member To Class: ClassName=U_Power Member=Component J3 USB-5
+Added Room: Name=U_MCU
+Added Room: Name=U_Power

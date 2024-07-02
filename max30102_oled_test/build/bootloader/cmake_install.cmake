@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/ASUS/Desktop/ESPIDF_Mana/max30102_oled_test/build/bootloader/esp-idf/cmake_install.cmake")
+  include("D:/HUST/20232/microprocessor_20232/max30102_oled_test/build/bootloader/esp-idf/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/ASUS/Desktop/ESPIDF_Mana/max30102_oled_test/build/bootloader/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/HUST/20232/microprocessor_20232/max30102_oled_test/build/bootloader/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

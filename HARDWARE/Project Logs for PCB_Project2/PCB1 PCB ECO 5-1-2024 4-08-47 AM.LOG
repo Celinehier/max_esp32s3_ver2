@@ -1,0 +1,179 @@
+Removed Pin From Net: NetName=3V3 Pin=C?-1
+Removed Pin From Net: NetName=5V Pin=C?-1
+Removed Pin From Net: NetName=GND Pin=C?-1
+Removed Pin From Net: NetName=NetC?_1 Pin=C?-1
+Removed Pin From Net: NetName=VCCB Pin=C?-1
+Removed Pin From Net: NetName=NetC?_2 Pin=C?-2
+Removed Pin From Net: NetName=VBAT Pin=C?-2
+Removed Pin From Net: NetName=GND Pin=IC?-1
+Removed Pin From Net: NetName=NetIC?_1 Pin=IC?-1
+Removed Pin From Net: NetName=VCCB Pin=IC?-1
+Removed Pin From Net: NetName=GND Pin=IC?-2
+Removed Pin From Net: NetName=NetC?_1 Pin=IC?-2
+Removed Pin From Net: NetName=NetIC?_2 Pin=IC?-2
+Removed Pin From Net: NetName=GND Pin=IC?-3
+Removed Pin From Net: NetName=GND Pin=IC?-3
+Removed Pin From Net: NetName=NetC?_1 Pin=IC?-3
+Removed Pin From Net: NetName=NetIC?_3 Pin=IC?-3
+Removed Pin From Net: NetName=5V Pin=IC?-4
+Removed Pin From Net: NetName=3V3 Pin=IC?-5
+Removed Pin From Net: NetName=VBAT Pin=IC?-5
+Removed Pin From Net: NetName=GND Pin=IC?-6
+Removed Pin From Net: NetName=NetC?_1 Pin=IC?-6
+Removed Pin From Net: NetName=NetIC?_6 Pin=IC?-6
+Removed Pin From Net: NetName=GND Pin=IC?-7
+Removed Pin From Net: NetName=NetIC?_7 Pin=IC?-7
+Removed Pin From Net: NetName=5V Pin=IC?-8
+Removed Pin From Net: NetName=NetIC?_1 Pin=IC?-8
+Removed Pin From Net: NetName=NetC?_1 Pin=J?-1
+Removed Pin From Net: NetName=VBAT Pin=J?-1
+Removed Pin From Net: NetName=GND Pin=J?-2
+Removed Pin From Net: NetName=VCCB Pin=J?-2
+Removed Pin From Net: NetName=5V Pin=LED?-1
+Removed Pin From Net: NetName=NetLED?_1 Pin=LED?-1
+Removed Pin From Net: NetName=GND Pin=LED?-2
+Removed Pin From Net: NetName=GND Pin=R?-1
+Removed Pin From Net: NetName=NetC?_2 Pin=R?-1
+Removed Pin From Net: NetName=NetIC?_3 Pin=R?-1
+Removed Pin From Net: NetName=NetIC?_7 Pin=R?-1
+Removed Pin From Net: NetName=VCCB Pin=R?-1
+Removed Pin From Net: NetName=GND Pin=R?-2
+Removed Pin From Net: NetName=NetC?_2 Pin=R?-2
+Removed Pin From Net: NetName=NetIC?_2 Pin=R?-2
+Removed Pin From Net: NetName=NetLED?_2 Pin=R?-2
+Removed Pin From Net: NetName=VBAT Pin=R?-2
+Removed Pin From Net: NetName=VCCB Pin=R?-2
+Removed Member From Class: ClassName=MCU Member=P6
+Change Component Footprint: Designator=C? Old Footprint=CAP_0805 New Footprint=CAP_TANTALUM_3216
+Change Component Footprint: Designator=C? Old Footprint=CAP_TANTALUM_3216 New Footprint=CAP_0805
+Change Component Footprint: Designator=IC? Old Footprint=FS8205A New Footprint=SOT23-6
+Change Component Footprint: Designator=IC? Old Footprint=SOT23-5 New Footprint=TP4056
+Change Component Footprint: Designator=IC? Old Footprint=SOT23-6 New Footprint=FS8205A
+Change Component Footprint: Designator=IC? Old Footprint=TP4056 New Footprint=SOT23-5
+Change Component Comment : Designator=LED? Old Comment= New Comment=LED
+Change Component Comment : Designator=R? Old Comment=0.1k New Comment=1k2
+Change Component Comment : Designator=R? Old Comment=1k2 New Comment=1k
+Change Component Comment : Designator=R? Old Comment=1k New Comment=100k
+Change Component Comment : Designator=R? Old Comment=10k New Comment=30k
+Change Component Comment : Designator=R? Old Comment=30k New Comment=0.1k
+Change Component Comment : Designator=R? Old Comment=100k New Comment=10k
+Change Component Comment : Designator=C? Old Comment=100nF New Comment=470nF
+Change Component Comment : Designator=C? Old Comment=220uF New Comment=100nF
+Change Component Comment : Designator=C? Old Comment=470nF New Comment=220uF
+Change Component Comment : Designator=IC? Old Comment=DW01A New Comment=FS8205A
+Change Component Comment : Designator=IC? Old Comment=FS8205A New Comment=DW01A
+Change Component Comment : Designator=LED? Old Comment=LED New Comment=
+Change Component Comment : Designator=IC? Old Comment=RT9013 New Comment=TP4056
+Change Component Comment : Designator=IC? Old Comment=TP4056 New Comment=RT9013
+Change component parameters: Designator = "C?"; Footprint = "CAP_TANTALUM_3216"; UniqueID = "\WKQKFCSQ\UFEDGIIU"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageReference"; Value = "POLAR0.8"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C?"; Footprint = "CAP_0805"; UniqueID = "\WKQKFCSQ\XEPGSNIX"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageReference"; Value = "RAD-0.3"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "33p"; VariantName = "[No Variations]"
+Added Component: Designator=MAX3010X(HDR1X4)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=3V3 Pin=C?-1
+Added Pin To Net: NetName=5V Pin=C?-1
+Added Pin To Net: NetName=GND Pin=C?-1
+Added Pin To Net: NetName=NetC?_1 Pin=C?-1
+Added Pin To Net: NetName=VCCB Pin=C?-1
+Added Pin To Net: NetName=D13_MCU Pin=C?-2
+Added Pin To Net: NetName=NetC?_2 Pin=C?-2
+Added Pin To Net: NetName=VBAT Pin=C?-2
+Added Pin To Net: NetName=GND Pin=IC?-1
+Added Pin To Net: NetName=NetIC?_1 Pin=IC?-1
+Added Pin To Net: NetName=VCCB Pin=IC?-1
+Added Pin To Net: NetName=GND Pin=IC?-2
+Added Pin To Net: NetName=NetC?_1 Pin=IC?-2
+Added Pin To Net: NetName=NetIC?_2 Pin=IC?-2
+Added Pin To Net: NetName=GND Pin=IC?-3
+Added Pin To Net: NetName=GND Pin=IC?-3
+Added Pin To Net: NetName=NetC?_1 Pin=IC?-3
+Added Pin To Net: NetName=NetIC?_3 Pin=IC?-3
+Added Pin To Net: NetName=5V Pin=IC?-4
+Added Pin To Net: NetName=3V3 Pin=IC?-5
+Added Pin To Net: NetName=NetC?_2 Pin=IC?-5
+Added Pin To Net: NetName=VBAT Pin=IC?-5
+Added Pin To Net: NetName=GND Pin=IC?-6
+Added Pin To Net: NetName=NetC?_1 Pin=IC?-6
+Added Pin To Net: NetName=NetIC?_6 Pin=IC?-6
+Added Pin To Net: NetName=GND Pin=IC?-7
+Added Pin To Net: NetName=NetIC?_7 Pin=IC?-7
+Added Pin To Net: NetName=5V Pin=IC?-8
+Added Pin To Net: NetName=NetIC?_1 Pin=IC?-8
+Added Pin To Net: NetName=NetC?_1 Pin=J?-1
+Added Pin To Net: NetName=VBAT Pin=J?-1
+Added Pin To Net: NetName=GND Pin=J?-2
+Added Pin To Net: NetName=VCCB Pin=J?-2
+Added Pin To Net: NetName=5V Pin=LED?-1
+Added Pin To Net: NetName=NetLED?_1 Pin=LED?-1
+Added Pin To Net: NetName=GND Pin=LED?-2
+Added Pin To Net: NetName=GND Pin=MAX3010X-1
+Added Pin To Net: NetName=D21_MCU Pin=MAX3010X-2
+Added Pin To Net: NetName=D22_MCU Pin=MAX3010X-3
+Added Pin To Net: NetName=3V3 Pin=MAX3010X-4
+Added Pin To Net: NetName=D21_MCU Pin=OLED-1
+Added Pin To Net: NetName=D22_MCU Pin=OLED-2
+Added Pin To Net: NetName=GND Pin=OLED-3
+Added Pin To Net: NetName=3V3 Pin=OLED-4
+Added Pin To Net: NetName=GND Pin=P1-14
+Added Pin To Net: NetName=3V3 Pin=P1-15
+Added Pin To Net: NetName=GND Pin=P4-2
+Added Pin To Net: NetName=D18_MCU Pin=R2-2
+Added Pin To Net: NetName=D19_MCU Pin=R3-2
+Added Pin To Net: NetName=D13_MCU Pin=R?-1
+Added Pin To Net: NetName=GND Pin=R?-1
+Added Pin To Net: NetName=NetC?_2 Pin=R?-1
+Added Pin To Net: NetName=NetIC?_3 Pin=R?-1
+Added Pin To Net: NetName=NetIC?_7 Pin=R?-1
+Added Pin To Net: NetName=VCCB Pin=R?-1
+Added Pin To Net: NetName=D13_MCU Pin=R?-2
+Added Pin To Net: NetName=GND Pin=R?-2
+Added Pin To Net: NetName=NetIC?_2 Pin=R?-2
+Added Pin To Net: NetName=NetLED?_2 Pin=R?-2
+Added Pin To Net: NetName=VBAT Pin=R?-2
+Added Pin To Net: NetName=VCCB Pin=R?-2
+Added Pin To Net: NetName=3V3 Pin=U?-1
+Added Pin To Net: NetName=GND Pin=U?-2
+Added Pin To Net: NetName=GND Pin=U?-29
+Change Net Name : Old Net Name=3V3 New Net Name=3.3_MCU
+Change Class Name : Old Net Name=MCU New Net Name=U_MCU
+Change Class Name : Old Net Name=Power New Net Name=U_Power
+Added Member To Class: ClassName=U_Power Member=Component C? 100nF
+Added Member To Class: ClassName=U_Power Member=Component C? 100nF
+Added Member To Class: ClassName=U_Power Member=Component C? 100nF
+Added Member To Class: ClassName=U_Power Member=Component C? 220uF
+Added Member To Class: ClassName=U_Power Member=Component C? 100nF
+Added Member To Class: ClassName=U_Power Member=Component C? 100nF
+Added Member To Class: ClassName=U_Power Member=Component C? 470nF
+Added Member To Class: ClassName=U_Power Member=Component IC? RT9013
+Added Member To Class: ClassName=U_Power Member=Component IC? TP4056
+Added Member To Class: ClassName=U_Power Member=Component IC? FS8205A
+Added Member To Class: ClassName=U_Power Member=Component J? Jumper2
+Added Member To Class: ClassName=U_Power Member=Component J? VBAT_IN
+Added Member To Class: ClassName=U_Power Member=Component LED? LED
+Added Member To Class: ClassName=U_Power Member=Component LED? 
+Added Member To Class: ClassName=U_MCU Member=Component MAX3010X Header 4
+Added Member To Class: ClassName=U_Power Member=Component R? 1k
+Added Member To Class: ClassName=U_Power Member=Component R? 1k
+Added Member To Class: ClassName=U_Power Member=Component R? 1k
+Added Member To Class: ClassName=U_Power Member=Component R? 10k
+Added Member To Class: ClassName=U_Power Member=Component R? 100k
+Added Member To Class: ClassName=U_Power Member=Component R? 1k
+Added Member To Class: ClassName=U_Power Member=Component R? 0.1k
+Added Member To Class: ClassName=U_Power Member=Component R? 1k2
+Added Room: Name=U_MCU
+Added Room: Name=U_Power

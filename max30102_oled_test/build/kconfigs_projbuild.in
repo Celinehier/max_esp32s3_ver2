@@ -3,4 +3,4 @@ source "C:/Users/ASUS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_app_for
 source "C:/Users/ASUS/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom/Kconfig.projbuild"
 source "C:/Users/ASUS/Espressif/frameworks/esp-idf-v5.1.2/components/esptool_py/Kconfig.projbuild"
 source "C:/Users/ASUS/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table/Kconfig.projbuild"
-source "C:/Users/ASUS/Desktop/ESPIDF_Mana/max30102_oled_test/component/ssd1306/Kconfig.projbuild"
+source "D:/HUST/20232/microprocessor_20232/max30102_oled_test/component/ssd1306/Kconfig.projbuild"

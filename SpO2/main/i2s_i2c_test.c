@@ -125,10 +125,18 @@ void max30102_test(void *pvParameters)
 
 void app_main(void)
 {
-    // Set up I2C
+    // int i = 1; 
+    // while (1)
+    // {
+    //     gpio_set_level(GPIO_NUM_2, i);
+    //     i =! i;
+    //     vTaskDelay(1000/portTICK_PERIOD_MS);    
+    // }
+    
+    
     ESP_ERROR_CHECK(i2cdev_init()); 
     
     // Create tasks
-    xTaskCreatePinnedToCore(max30102_test, "max30102_test", 1024 * 5, &readMAXTask_handle, 6, NULL, 0);
+    xTaskCreatePinnedToCore(max30102_test, "max30102_test", 1024 * 5, &readMAXTask_handle, 1, NULL, 0);
 
 }

@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=3.3_MCU Pin=C4-1
+Removed Pin From Net: NetName=3.3_MCU Pin=C6-1
+Removed Pin From Net: NetName=3.3_MCU Pin=IC2-5
+Removed Pin From Net: NetName=3.3_MCU Pin=MAX1-4
+Removed Pin From Net: NetName=5V Pin=OLED1-4
+Removed Pin From Net: NetName=3.3_MCU Pin=R1-1
+Removed Pin From Net: NetName=3.3_MCU Pin=R7-2
+Added Pin To Net: NetName=VIN_MCU Pin=C4-1
+Added Pin To Net: NetName=VIN_MCU Pin=C6-1
+Added Pin To Net: NetName=VIN_MCU Pin=IC2-5
+Added Pin To Net: NetName=VIN_MCU Pin=MAX1-4
+Added Pin To Net: NetName=VIN_MCU Pin=OLED1-4
+Added Pin To Net: NetName=VIN_MCU Pin=R1-1
+Added Pin To Net: NetName=VIN_MCU Pin=R7-2
+Added Room: Name=U_MCU
+Added Room: Name=U_Power

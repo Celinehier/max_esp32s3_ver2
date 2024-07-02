@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/ASUS/Desktop/ESPIDF_Mana/max30102_oled_test/main
+# Install script for directory: D:/HUST/20232/microprocessor_20232/max30102_oled_test/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

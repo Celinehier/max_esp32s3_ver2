@@ -1,0 +1,79 @@
+Change Component Designator: OldDesignator=C? NewDesignator=C2
+Change Component Designator: OldDesignator=C? NewDesignator=C3
+Change Component Designator: OldDesignator=C? NewDesignator=C4
+Change Component Designator: OldDesignator=C? NewDesignator=C5
+Change Component Designator: OldDesignator=C? NewDesignator=C6
+Change Component Designator: OldDesignator=C? NewDesignator=C7
+Change Component Designator: OldDesignator=C? NewDesignator=C8
+Change Component Designator: OldDesignator=C? NewDesignator=C9
+Change Component Designator: OldDesignator=IC? NewDesignator=IC1
+Change Component Designator: OldDesignator=IC? NewDesignator=IC2
+Change Component Designator: OldDesignator=IC? NewDesignator=IC3
+Change Component Designator: OldDesignator=IC? NewDesignator=IC4
+Change Component Designator: OldDesignator=J? NewDesignator=J1
+Change Component Designator: OldDesignator=J? NewDesignator=J2
+Change Component Designator: OldDesignator=J? NewDesignator=J3
+Change Component Designator: OldDesignator=LED2 NewDesignator=LED1
+Change Component Designator: OldDesignator=LED3 NewDesignator=LED2
+Change Component Designator: OldDesignator=LED? NewDesignator=LED3
+Change Component Designator: OldDesignator=LED? NewDesignator=LED4
+Change Component Designator: OldDesignator=LED? NewDesignator=LED5
+Change Component Designator: OldDesignator=MAX3010X NewDesignator=MAX1
+Change Component Designator: OldDesignator=OLED NewDesignator=OLED1
+Change Component Designator: OldDesignator=P4 NewDesignator=P2
+Change Component Designator: OldDesignator=P5 NewDesignator=P3
+Change Component Designator: OldDesignator=R? NewDesignator=R4
+Change Component Designator: OldDesignator=R? NewDesignator=R5
+Change Component Designator: OldDesignator=R? NewDesignator=R6
+Change Component Designator: OldDesignator=R? NewDesignator=R7
+Change Component Designator: OldDesignator=R? NewDesignator=R8
+Change Component Designator: OldDesignator=R? NewDesignator=R9
+Change Component Designator: OldDesignator=R? NewDesignator=R10
+Change Component Designator: OldDesignator=R? NewDesignator=R11
+Change Component Designator: OldDesignator=R? NewDesignator=R12
+Change Component Designator: OldDesignator=U? NewDesignator=U1
+Change Net Name : Old Net Name=NetC?_1 New Net Name=NetC7_1
+Change Net Name : Old Net Name=NetC?_2 New Net Name=NetC7_2
+Change Net Name : Old Net Name=NetIC?_1 New Net Name=NetIC4_1
+Change Net Name : Old Net Name=NetIC?_2 New Net Name=NetIC1_2
+Change Net Name : Old Net Name=NetIC?_3 New Net Name=NetIC2_3
+Change Net Name : Old Net Name=NetIC?_6 New Net Name=NetIC1_6
+Change Net Name : Old Net Name=NetIC?_7 New Net Name=NetIC1_7
+Change Net Name : Old Net Name=NetLED2_2 New Net Name=NetLED1_2
+Change Net Name : Old Net Name=NetLED3_2 New Net Name=NetLED2_2
+Change Net Name : Old Net Name=NetLED?_1 New Net Name=NetLED5_1
+Change Net Name : Old Net Name=NetLED?_2 New Net Name=NetLED4_2
+Added Pin To Net: NetName=NetIC3_1 Pin=IC3-1
+Added Pin To Net: NetName=NetIC3_1 Pin=IC4-4
+Added Net: Name=NetIC3_1
+Added Pin To Net: NetName=NetIC3_2 Pin=IC3-2
+Added Pin To Net: NetName=NetIC3_2 Pin=R12-1
+Added Net: Name=NetIC3_2
+Added Pin To Net: NetName=NetIC3_3 Pin=IC3-3
+Added Pin To Net: NetName=NetIC3_3 Pin=IC4-5
+Added Net: Name=NetIC3_3
+Added Pin To Net: NetName=NetLED3_2 Pin=LED3-2
+Added Pin To Net: NetName=NetLED3_2 Pin=R6-2
+Added Net: Name=NetLED3_2
+Added Member To Class: ClassName=U_Power Member=Component C2 100nF
+Added Member To Class: ClassName=U_Power Member=Component C3 100nF
+Added Member To Class: ClassName=U_Power Member=Component C4 220uF
+Added Member To Class: ClassName=U_Power Member=Component C5 470nF
+Added Member To Class: ClassName=U_Power Member=Component C6 100nF
+Added Member To Class: ClassName=U_Power Member=Component C7 100nF
+Added Member To Class: ClassName=U_Power Member=Component C8 100nF
+Added Member To Class: ClassName=U_Power Member=Component IC1 TP4056
+Added Member To Class: ClassName=U_Power Member=Component IC3 DW01A
+Added Member To Class: ClassName=U_Power Member=Component IC4 FS8205A
+Added Member To Class: ClassName=U_Power Member=Component J1 Jumper2
+Added Member To Class: ClassName=U_Power Member=Component J2 VBAT_IN
+Added Member To Class: ClassName=U_Power Member=Component LED3 LED
+Added Member To Class: ClassName=U_Power Member=Component LED4 LED
+Added Member To Class: ClassName=U_Power Member=Component R4 1k
+Added Member To Class: ClassName=U_Power Member=Component R5 10k
+Added Member To Class: ClassName=U_Power Member=Component R6 1k
+Added Member To Class: ClassName=U_Power Member=Component R8 1k2
+Added Member To Class: ClassName=U_Power Member=Component R9 30k
+Added Member To Class: ClassName=U_Power Member=Component R10 0.1k
+Added Member To Class: ClassName=U_Power Member=Component R11 100k
+Added Member To Class: ClassName=U_Power Member=Component R12 1k

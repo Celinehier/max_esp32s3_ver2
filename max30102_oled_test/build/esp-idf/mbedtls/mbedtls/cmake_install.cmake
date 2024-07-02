@@ -39,9 +39,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/ASUS/Desktop/ESPIDF_Mana/max30102_oled_test/build/esp-idf/mbedtls/mbedtls/include/cmake_install.cmake")
-  include("C:/Users/ASUS/Desktop/ESPIDF_Mana/max30102_oled_test/build/esp-idf/mbedtls/mbedtls/3rdparty/cmake_install.cmake")
-  include("C:/Users/ASUS/Desktop/ESPIDF_Mana/max30102_oled_test/build/esp-idf/mbedtls/mbedtls/library/cmake_install.cmake")
+  include("D:/HUST/20232/microprocessor_20232/max30102_oled_test/build/esp-idf/mbedtls/mbedtls/include/cmake_install.cmake")
+  include("D:/HUST/20232/microprocessor_20232/max30102_oled_test/build/esp-idf/mbedtls/mbedtls/3rdparty/cmake_install.cmake")
+  include("D:/HUST/20232/microprocessor_20232/max30102_oled_test/build/esp-idf/mbedtls/mbedtls/library/cmake_install.cmake")
 
 endif()
 

@@ -5,7 +5,9 @@
         "stdlib.h": "c",
         "task.h": "c",
         "font8x8_basic.h": "c",
-        "max30102.h": "c"
+        "max30102.h": "c",
+        "unity_config.h": "c",
+        "i2c.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

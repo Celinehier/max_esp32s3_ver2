@@ -2,70 +2,85 @@
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
 #include <string.h>
-#include <math.h>
-#include "driver/i2c.h"
+#include <esp_timer.h>
+#include <esp_vfs_fat.h>
+#include <freertos/ringbuf.h>
+#include "math.h"
 
+
+// Incluse MAX30102 driver
 #include "max30102.h"
-#include "ssd1306.h"
-#include "font8x8_basic.h"
-#include "sdkconfig.h"
 
+TaskHandle_t readMAXTask_handle = NULL;
+TaskHandle_t readOLEDTask_handle = NULL;
+
+RingbufHandle_t buf_handle_max = xRingbufferCreate(1028, RINGBUF_TYPE_NOSPLIT);
+QueueSetHandle_t queue_set = xQueueCreateSet(3);
+static char data_max[400] = "";
+
+double avered = 0;
+double aveir = 0;
+double sumirrms = 0;
+double sumredrms = 0;
+int i = 0;
+int Num = 100;  //calculate SpO2 by this sampling interval
+
+double ESpO2 = 95.0;     //initial value of estimated SpO2
+double FSpO2 = 0.7;      //filter factor for estimated SpO2
+double frate = 0.95;     //low pass filter for IR/red LED value to eliminate AC component
+#define TIMETOBOOT 3000  // wait for this time(msec) to output SpO2
+#define SCALE 88.0       //adjust to display heart beat and SpO2 in the same scale
+#define MAX_SPO2 100.0
+#define MIN_SPO2 80.0
+#define SAMPLING 5       //if you want to see heart beat more precisely , set SAMPLING to 1
+#define FINGER_ON 30000  // if red signal is lower than this , it indicates your finger is not on the sensor
+#define MINIMUM_SPO2 80.0
 
 static const char *TAG = "MAIN";
-
-void master_init() {
-    int i2c_master_port = 0;
-    i2c_config_t conf = {
-        .mode = I2C_MODE_MASTER,
-        .sda_io_num = I2C_MASTER_SDA_IO,         // select GPIO specific to your project
-        .sda_pullup_en = GPIO_PULLUP_ENABLE,
-        .scl_io_num = I2C_MASTER_SCL_IO,         // select GPIO specific to your project
-        .scl_pullup_en = GPIO_PULLUP_ENABLE,
-        .master.clk_speed = I2C_MASTER_FREQ_HZ,  // select frequency specific to your project
-        // .clk_flags = 0,          /*!< Optional, you can use I2C_SCLK_SRC_FLAG_* flags to choose i2c source clock here. */
-    };
-}
-void sensor_init(){
-    int i2c_slave_port_1 = I2C_SLAVE_NUM_1;
-    i2c_config_t conf_slave = {
-        .sda_io_num = I2C_SLAVE_SDA_IO,          // select GPIO specific to your project
-        .sda_pullup_en = GPIO_PULLUP_ENABLE,
-        .scl_io_num = I2C_SLAVE_SCL_IO,          // select GPIO specific to your project
-        .scl_pullup_en = GPIO_PULLUP_ENABLE,
-        .mode = I2C_MODE_SLAVE,
-        .slave.addr_10bit_en = 0,
-        .slave.slave_addr = 0x57,      // address of your project
-    };
-
+/**
+ * @brief Read data from MAX30102 and send to ring buffer
+ * 
+ * @param pvParameters 
+ */
+void max30102_test(void *pvParameters)
+{
     i2c_dev_t dev;
     memset(&dev, 0, sizeof(i2c_dev_t));
-    struct  max30102_record record;
+
+    ESP_ERROR_CHECK(max30102_initDesc(&dev, 0, 21, 22));
+
+    struct max30102_record record;
     struct max30102_data data;
 
     if (max30102_readPartID(&dev) == ESP_OK) {
-        ESP_LOGI(TAG, "Found MAX30102!");
+        ESP_LOGI(__func__, "Found MAX30102!");
     }
     else {
-        ESP_LOGE(TAG, "Not found MAX30102");        
+        ESP_LOGE(__func__, "Not found MAX30102");
     }
 
     if (max30102_init(0x1F, 4, 2, 1000, 118, 4096, &record, &dev) == ESP_OK) {
-        ESP_LOGI(TAG, "Init OK");
+        ESP_LOGI(__func__, "Init OK");
     }
     else {
-        ESP_LOGE(TAG, "Init fail!");
+        ESP_LOGE(__func__, "Init fail!");
     }
+    
+
+    uint16_t samplesTaken = 0;
     char data_temp[16] = "";
     unsigned long red;
-    unsigned long ir;    while (1)
+    unsigned long ir;
+    while (1)
     {
-        ESP_LOGI(TAG, "xin chao");
+
         max30102_check(&record, &dev); //Check the sensor, read up to 3 samples
 
         double fred, fir;
         double Spo2 = 0;
         while (max30102_available(&record)) //do we have new data?
         {
+            samplesTaken++;
 
             // printf("%d,", max30102_getFIFORed(&record));
             // printf("%d", max30102_getFIFOIR(&record));
@@ -74,26 +89,85 @@ void sensor_init(){
             ir = max30102_getFIFOIR(&record);
 
             memset(data_temp, 0, sizeof(data_temp));
-            // sprintf(data_temp, "%lu,%lu\n", red, ir);
-            ESP_LOGI(TAG, "IR: %lu, RED: %lu", ir, red);    
+            samplesTaken++;
+            fred = (double)red;
+            fir = (double)ir;
+            avered = avered * frate + (double)red * (1.0 - frate);  //average red level by low pass filter
+            aveir = aveir * frate + (double)ir * (1.0 - frate);     //average IR level by low pass filter
+            sumredrms += (fred - avered) * (fred - avered);         //square sum of alternate component of red level
+            sumirrms += (fir - aveir) * (fir - aveir);  
+            if((samplesTaken % 5) == 0){
+                float ir_forGraph = 2.0 * (fir - aveir) / aveir * SCALE + (MIN_SPO2 + MAX_SPO2) / 2.0;
+                float red_forGraph = 2.0 * (fred - avered) / avered * SCALE + (MIN_SPO2 + MAX_SPO2) / 2.0; 
+                if (ir_forGraph > 100.0) {ir_forGraph = 100.0;}
+                if (ir_forGraph < 80.0) {ir_forGraph = 80.0;}
+                if (red_forGraph > 100.0) {red_forGraph = 100.0;}
+                if (red_forGraph < 80.0) {red_forGraph = 80.0;}
+                if (ir < FINGER_ON) {
+                    ESpO2 = MINIMUM_SPO2;
+                    ESP_LOGE(TAG, "Cho tay vao di baby");
+                }
+            
+            }
+            if ((samplesTaken % Num) == 0){
+                double R = (sqrt(sumredrms) / avered) / (sqrt(sumirrms) / aveir);
+                Spo2 = -23.3 * (R - 0.4) + 100;
+                i = 0;
+                sumirrms = 0.0;
+                sumredrms = 0.0;
+                memset(data_temp, 0, sizeof(data_temp));
+                printf(data_max, "%.2f \n", Spo2);
+                strcat(data_max, data_temp);
+                // ESP_LOGI(TAG, "SpO2 trong mau la: %f", Spo2);
+                xRingbufferSend(buf_handle_max, data_max, sizeof(data_max), pdMS_TO_TICKS(5));
+                samplesTaken = 0;
+                memset(data_max, 0, sizeof(data_max));
+                break;
+            }
             max30102_nextSample(&record); //We're finished with this sample so move to next sample
+            
         }
     }
 }
-void oled_init(){
-    SSD1306_t oled;
-    oled._flip = true;
-    i2c_master_init(&oled, CONFIG_SDA_GPIO, CONFIG_SCL_GPIO, CONFIG_RESET_GPIO);
-    ssd1306_init(&oled, 128, 64);
-    ssd1306_clear_screen(&oled, false);
-    ssd1306_display_text(&oled, 0, "Hello", 5, false);
 
+void ssd1306_oled (void *parameter)
+{
+    while (1)
+    {
+        size_t item_size;
+
+        char *item = (char *)xRingbufferReceive(buf_handle_max, &item_size, 1);
+        if(item != NULL){
+            vRingbufferReturnItem(buf_handle_max, (void *)item);
+            ESP_LOGI(TAG, "%p", item);
+        }
+    }
+    
 }
 
 void app_main(void)
 {
-    master_init();
-    oled_init();
-    sensor_init();
+    // int i = 1; 
+    // while (1)
+    // {
+    //     gpio_set_level(GPIO_NUM_2, i);
+    //     i =! i;
+    //     vTaskDelay(1000/portTICK_PERIOD_MS);    
+    // }
+    buf_handle_max = xRingbufferCreate(1028 * 6, RINGBUF_TYPE_NOSPLIT);
+    if( buf_handle_max == NULL) 
+    {
+        ESP_LOGE(__func__, "Ring buffers create fail");
+    }
+    else
+    {
+        ESP_LOGI(__func__, "Ring buffers create OK");
+    }
+    
+    ESP_ERROR_CHECK(i2cdev_init()); 
+    
+    // Create tasks
+    xTaskCreatePinnedToCore(max30102_test, "max30102_test", 1024 * 5, &readMAXTask_handle, 6, NULL, 0);
+    xTaskCreatePinnedToCore(ssd1306_oled, "ssd1306_oled", 1204 * 10, &readOLEDTask_handle, 6, NULL, 0);
 
 }
