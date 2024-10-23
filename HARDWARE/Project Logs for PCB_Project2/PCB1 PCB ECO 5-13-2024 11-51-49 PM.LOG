@@ -1,5 +1,0 @@
-Added Pin To Net: NetName=NetC1_2 Pin=P1-13
-Added Pin To Net: NetName=NetC1_2 Pin=U1-3
-Change Net Name : Old Net Name=NetC1_2 New Net Name=D15_MCU
-Added Room: Name=U_MCU
-Added Room: Name=U_Power

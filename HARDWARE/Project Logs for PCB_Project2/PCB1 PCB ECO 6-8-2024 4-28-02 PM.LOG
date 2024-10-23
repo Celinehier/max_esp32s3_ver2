@@ -1,7 +1,0 @@
-Change Component Comment : Designator=R10 Old Comment=30k New Comment=10k
-Change Component Comment : Designator=R2 Old Comment=Resistor - SMD New Comment=10k
-Change Component Comment : Designator=R3 Old Comment=Resistor - SMD New Comment=10k
-Change Component Designator: OldDesignator=MAX1 NewDesignator=MAX10302
-Added Member To Class: ClassName=U_MCU Member=Component U1 ESP32-DEVKIT-V1
-Added Room: Name=U_MCU
-Added Room: Name=U_Power

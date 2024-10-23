@@ -1,0 +1,35 @@
+// {
+//   "C_Cpp.clang_format_style": "Visual Studio",
+//   "editor.formatOnSave": false,
+//   "[cpp]": {
+//     "editor.quickSuggestions": {
+//       "comments": "on",
+//       "strings": "on",
+//       "other": "on"
+//     }
+//   },
+//   "[c]": {
+//     "editor.quickSuggestions": {
+//       "comments": "on",
+//       "strings": "on",
+//       "other": "on"
+//     }
+//   },
+//   "C_Cpp.intelliSenseEngineFallback": "Enabled",
+//   "idf.port": "/dev/ttyUSB0",
+//   "git.ignoreLimitWarning": true,
+//   "files.associations": {
+//     "max30102.h": "c"
+//   },
+//   "idf.adapterTargetName": "esp32"
+// }
+{
+  "C_Cpp.intelliSenseEngine": "default",
+  "idf.adapterTargetName": "esp32s3",
+  "idf.openOcdConfigs": [
+    "board/esp32s3-builtin.cfg"
+  ],
+  "idf.flashType": "UART",
+  "idf.portWin": "COM8"
+}
+

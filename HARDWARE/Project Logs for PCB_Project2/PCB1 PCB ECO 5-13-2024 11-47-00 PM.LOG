@@ -1,4 +1,0 @@
-Change Component Footprint: Designator=R2 Old Footprint=RES-SMD-0101 New Footprint=RES-SMD-0805
-Change Component Footprint: Designator=R3 Old Footprint=RES-SMD-0101 New Footprint=RES-SMD-0805
-Added Room: Name=U_MCU
-Added Room: Name=U_Power
