@@ -1,5 +1,7 @@
 # Tutorial
 
+using esp idf v 4.4
+
 ![Main Slide Image](images/esp32max30102Library.png)
 This is an example of how a library for the MAX30102 Heart Rate and Pulse Oximetry sensor. We will do a partial walk through on how to implement the features and functionality as suggested in the [MAX30102 Datasheet](https://datasheets.maximintegrated.com/en/ds/MAX30102.pdf).
 
